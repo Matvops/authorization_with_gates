@@ -6,6 +6,8 @@
                     <ul class="display-6">
                         @guest
                             <li><a href="{{route('login')}}">Login</a></li>
+                        @else
+                            <li><a href="{{route('only_admin')}}">ADMINS</a></li>
                         @endguest
                     </ul>
                 </div>
