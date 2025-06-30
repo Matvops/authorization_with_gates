@@ -4,9 +4,12 @@
             <div class="row">
                 <div class="col">
                     <ul class="display-6">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
+                        @guest
+                            <li><a href="{{route('login')}}">Login</a></li>
+                        @else
+                            <li><a href="{{route('only_admin')}}">ADMINS</a></li>
+                            <li><a href="{{route('only_user')}}">USERS</a></li>
+                        @endguest
                     </ul>
                 </div>
             </div>
