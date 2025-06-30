@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class AuthController extends Controller
 {
@@ -21,5 +22,11 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect()->route('home');
+    }
+
+    public function onlyAdmins()
+    {
+        if(Gate::allows('user_is_admin')) echo "Bem-Vindo";
+        else echo "User não é um ADMIN";
     }
 }
