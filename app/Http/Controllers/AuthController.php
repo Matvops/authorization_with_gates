@@ -12,7 +12,7 @@ class AuthController extends Controller
 {
     public function login(): RedirectResponse
     {
-        $user = User::find(2);
+        $user = User::find(1);
         Auth::login($user);
         return redirect()->route('home');
     }
