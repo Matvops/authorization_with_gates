@@ -34,6 +34,18 @@
                             @canany(['user_is_admin', 'user_is_user'])
                                 <p>paz e amor</p>
                             @endcanany
+
+                            @can('user_can_delete')
+                                <p>Pode deletar</p>
+                            @endcan
+
+                            @can('user_can', 'select')
+                                <p>Pode selecionar</p>
+                            @endcan
+
+                            @can('user_can', 'insert')
+                                <p>Pode inserir</p>
+                            @endcan
                         @endguest
                     </ul>
                 </div>
